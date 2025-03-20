@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Deriv Trading Bot Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- SweetAlert2 CSS -->
+    <!-- SweetAlert2 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <!-- SweetAlert2 JS (place before your own scripts) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Socket.IO Client -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"></script>
+    <!-- Lightweight Charts v4 -->
+    <script src="https://unpkg.com/lightweight-charts@4.2.1/dist/lightweight-charts.standalone.production.js"></script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Deriv Trading Bot Dashboard</h1>
+      <div class="d-flex justify-content-around mb-4">
+        <button id="start-btn" class="btn btn-success">Start Trading</button>
+        <button id="stop-btn" class="btn btn-danger">Stop Trading</button>
+      </div>
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-header">Trading Status</div>
+            <div class="card-body">
+              <h5 id="status-text" class="card-title">Unknown</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-header">Balance (USD)</div>
+            <div class="card-body">
+              <h5 id="balance" class="card-title">N/A</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-center">
+            <div class="card-header">Cycle Count</div>
+            <div class="card-body">
+              <h5 id="cycle-count" class="card-title">0</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Duration and Symbol Inputs -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <div class="input-group">
+            <input
+              type="number"
+              id="duration-input"
+              class="form-control"
+              placeholder="Enter duration (minutes)"
+              min="1"
+            />
+            <div class="input-group-append">
+              <button id="set-duration-btn" class="btn btn-primary">
+                Set Duration
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group">
+            <select id="symbol-select" class="form-control">
+              <option value="frxEURUSD">EUR/USD</option>
+              <option value="frxGBPUSD">GBP/USD</option>
+              <option value="frxUSDJPY">USD/JPY</option>
+              <option value="frxUSDCHF">USD/CHF</option>
+              <option value="Boom1000">Boom 1000</option>
+              <option value="Crash1000">Crash 1000</option>
+            </select>
+            <div class="input-group-append">
+              <button id="set-symbol-btn" class="btn btn-primary">
+                Set Asset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Market Chart Section -->
+      <div class="row mb-4">
+        <div class="col-md-12">
+          <h3 class="text-center">Market Price Chart</h3>
+          <div class="chart-container">
+            <div id="chartContainer" style="height: 400px"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Trade History Section -->
+      <div class="mt-4">
+        <h3>Trade History</h3>
+        <table class="table table-striped" id="trade-log">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Type</th>
+              <th>Stake (USD)</th>
+              <th>Price (USD)</th>
+              <th>Confidence</th>
+              <th>Profit/Loss (USD)</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

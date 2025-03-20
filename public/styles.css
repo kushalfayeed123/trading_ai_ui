@@ -1,0 +1,211 @@
+/* === Global Dark Theme Overrides === */
+html,
+body {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Container & Headings */
+.container {
+  background-color: #1e1e1e !important;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  padding: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
+/* Cards */
+.card {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border: none !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  background-color: #333333 !important;
+  border-bottom: 1px solid #444 !important;
+  color: #ffffff !important;
+}
+
+.card-body {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+}
+
+/* Inputs & Form Controls */
+.input-group .form-control,
+.form-control {
+  background-color: #2a2a2a !important;
+  border: 1px solid #444 !important;
+  color: #e0e0e0 !important;
+}
+
+.input-group .form-control::placeholder,
+.form-control::placeholder {
+  color: #888 !important;
+}
+
+.input-group-append .btn,
+.btn {
+  background-color: #333333 !important;
+  border: 1px solid #444 !important;
+  color: #ffffff !important;
+}
+
+/* Buttons */
+.btn-success {
+  background-color: #0a84ff !important;
+  border-color: #0a84ff !important;
+  color: #ffffff !important;
+}
+
+.btn-danger {
+  background-color: #ff453a !important;
+  border-color: #ff453a !important;
+  color: #ffffff !important;
+}
+
+.btn-primary {
+  background-color: #5e5ce6 !important;
+  border-color: #5e5ce6 !important;
+  color: #ffffff !important;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Chart Container */
+.chart-container {
+  position: relative;
+  height: 300px;
+  background-color: #1e1e1e !important;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Tables */
+.table {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border: none !important;
+}
+
+.table thead th {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #2a2a2a !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #242424 !important;
+}
+
+/* Dropdowns (if used) */
+.dropdown-menu {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+  border: 1px solid #444 !important;
+}
+
+
+/* === Dark Theme for Popups (Modals, Dropdowns, Tooltips, Alerts) === */
+
+/* Bootstrap Modal */
+.modal-content {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+  border-radius: 8px;
+  border: 1px solid #444 !important;
+}
+
+.modal-header {
+  background-color: #2a2a2a !important;
+  border-bottom: 1px solid #444 !important;
+}
+
+.modal-title {
+  color: #ffffff !important;
+}
+
+.modal-body {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0 !important;
+}
+
+.modal-footer {
+  background-color: #2a2a2a !important;
+  border-top: 1px solid #444 !important;
+}
+
+/* Bootstrap Dropdown */
+.dropdown-menu {
+  background-color: #2a2a2a !important;
+  border: 1px solid #444 !important;
+}
+
+.dropdown-item {
+  color: #e0e0e0 !important;
+}
+
+.dropdown-item:hover {
+  background-color: #3a3a3a !important;
+  color: #ffffff !important;
+}
+
+/* Bootstrap Tooltips */
+.tooltip-inner {
+  background-color: #2a2a2a !important;
+  color: #e0e0e0 !important;
+}
+
+.bs-tooltip-top .arrow::before,
+.bs-tooltip-bottom .arrow::before,
+.bs-tooltip-left .arrow::before,
+.bs-tooltip-right .arrow::before {
+  border-top-color: #2a2a2a !important;
+}
+
+/* Bootstrap Alerts */
+.alert {
+  background-color: #2a2a2a !important;
+  border: 1px solid #444 !important;
+  color: #e0e0e0 !important;
+}
+
+.alert-success {
+  background-color: #0a84ff !important;
+  border-color: #0a84ff !important;
+  color: #ffffff !important;
+}
+
+.alert-danger {
+  background-color: #ff453a !important;
+  border-color: #ff453a !important;
+  color: #ffffff !important;
+}
+
+.chart-container {
+  position: relative;
+  height: 430px;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#candlestickChart {
+  background-color: #1e1e1e !important;
+}
