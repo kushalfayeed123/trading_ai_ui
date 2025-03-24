@@ -125,20 +125,17 @@ function updateAreaChart() {
         return;
       }
       const processedData = data.data.map(d => {
-        // Extract datetime from available keys
         let dateStr = d.Datetime_ || d.Date || d.Datetime || d.date;
         if (!dateStr) return null;
-        // Ensure ISO format (replace first space with 'T' if needed)
         if (!dateStr.includes("T")) {
           dateStr = dateStr.replace(" ", "T");
         }
         const timestamp = Math.floor(new Date(dateStr).getTime() / 1000);
         let closeVal = 0;
         if (lowerSymbol === "boom1000" || lowerSymbol === "crash1000") {
-          // For Boom/Crash symbols, use the "close" property directly
-          closeVal = parseFloat(d.close) || 0;
+          // For Boom/Crash symbols, use the "Price" property
+          closeVal = parseFloat(d.Price) || 0;
         } else if (lowerSymbol.startsWith("frx")) {
-          // For forex pairs, remove the "frx" prefix and append "=X"
           const forexSymbol = symbol.substring(3);
           const closeKey = "Close_" + forexSymbol + "=X";
           closeVal = parseFloat(d[closeKey]);
@@ -146,7 +143,6 @@ function updateAreaChart() {
             closeVal = parseFloat(d["Close"]) || parseFloat(d.close) || 0;
           }
         } else {
-          // Default extraction for other symbols
           const closeKey = "Close_" + symbol;
           closeVal = parseFloat(d[closeKey]);
           if (isNaN(closeVal)) {
@@ -155,6 +151,7 @@ function updateAreaChart() {
         }
         return { time: timestamp, value: closeVal };
       }).filter(item => item !== null);
+
       console.log("Processed chart data:", processedData);
       if (processedData.length === 0) {
         console.warn("No valid data for chart found.");
